@@ -1,0 +1,13 @@
+<ejs-grid [dataSource]='data' (rowSelected)="onRowSelected($event)" (rowDeselected)="onRowDeselected($event)" >
+  <e-columns>
+    <e-column field="isSelected" headerText="" [allowSearching]="false" [allowFiltering]="false">
+      <ng-template #template let-dataSource>
+        <div>
+          <ejs-checkbox [checked]="dataSource.isSelected"></ejs-checkbox>
+        </div>
+      </ng-template>
+    </e-column>
+    <e-column field='dataSource' headerText='dataSource' textAlign='Right' width=90></e-column>
+    <e-column field='label' headerText='label' width=120></e-column>
+  </e-columns>
+</ejs-grid>
